@@ -19,42 +19,38 @@ document.addEventListener('DOMContentLoaded', () => {
             charIndex++;
         }
         
-        // Typing speed logic
         let typeSpeed = isDeleting ? 50 : 100;
         
-        // If word is finished typing
         if (!isDeleting && charIndex === currentWord.length) {
             typeSpeed = 2000; // Pause at the end of the word
             isDeleting = true;
         } else if (isDeleting && charIndex === 0) {
             isDeleting = false;
-            wordIndex = (wordIndex + 1) % words.length; // Move to next word
+            wordIndex = (wordIndex + 1) % words.length; 
             typeSpeed = 500; // Pause before typing next word
         }
         
         setTimeout(typeEffect, typeSpeed);
     }
     
-    // Start typing effect
-    setTimeout(typeEffect, 1000); // Initial 1 second delay
+    setTimeout(typeEffect, 1000); 
 
     // 2. Scroll Reveal Animation using Intersection Observer
     const observerOptions = {
         root: null,
         rootMargin: '0px',
-        threshold: 0.15 // Trigger when 15% of the element is visible
+        threshold: 0.15 
     };
 
     const observer = new IntersectionObserver((entries, observer) => {
         entries.forEach(entry => {
             if (entry.isIntersecting) {
                 entry.target.classList.add('show');
-                observer.unobserve(entry.target); // Stop observing once revealed
+                observer.unobserve(entry.target); 
             }
         });
     }, observerOptions);
 
-    // Target all elements with the 'hidden' class
     const hiddenElements = document.querySelectorAll('.hidden');
     hiddenElements.forEach((el) => observer.observe(el));
 });
