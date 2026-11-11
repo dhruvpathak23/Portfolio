@@ -3,112 +3,191 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>DHRUV // GOTHAM TERMINAL | Software & AI Engineer</title>
-    <!-- Google Fonts for The Batman (2022) Aesthetic -->
+    <title>DHRUV // VENGEANCE OS | Software & AI Engineer</title>
+    <!-- Google Fonts: Anton (2022 Poster Title), Rajdhani (HUD UI), Share Tech Mono (Terminal) -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&family=Oswald:wght@500;700&family=Share+Tech+Mono&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Anton&family=Inter:wght@400;500;600&family=Rajdhani:wght@600;700&family=Share+Tech+Mono&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="main.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
 <body>
 
-    <!-- Gotham Rain & CRT Scanline Overlay -->
+    <!-- Custom Tactical Cursor -->
+    <div class="cursor-dot" id="cursor-dot"></div>
+    <div class="cursor-ring" id="cursor-ring"></div>
+
+    <!-- Scroll Progress Bar -->
+    <div class="scroll-progress" id="scroll-progress"></div>
+
+    <!-- Atmospheric Layers -->
     <canvas id="rain-canvas"></canvas>
+    <div class="crimson-fog"></div>
     <div class="scanlines"></div>
     <div class="vignette"></div>
 
+    <!-- Navigation -->
     <nav class="navbar">
         <div class="nav-content">
-            <div class="logo">
-                <span class="bat-bracket">[</span>D.<span class="bat-bracket">]</span>
-                <span class="sys-status">SYS.ONLINE</span>
-            </div>
+            <a href="#about" class="logo">
+                <svg class="nav-bat-icon" viewBox="0 0 100 50" fill="currentColor">
+                    <path d="M50 15 L44 5 L40 14 C30 12 18 5 0 0 C10 15 15 28 5 42 C20 35 32 38 42 48 L50 38 L58 48 C68 38 80 35 95 42 C85 28 90 15 100 0 C82 5 70 12 60 14 L56 5 Z"/>
+                </svg>
+                <span>DHRUV</span>
+                <span class="sys-badge">BAT-OS // v2.6</span>
+            </a>
             <ul class="nav-links">
-                <li><a href="#about">01 // DOSSIER</a></li>
-                <li><a href="#education">02 // RECORDS</a></li>
-                <li><a href="#skills">03 // ARSENAL</a></li>
-                <li><a href="#experience">04 // FIELDWORK</a></li>
-                <li><a href="#projects">05 // ARCHIVES</a></li>
+                <li><a href="#about"><span>01.</span>DOSSIER</a></li>
+                <li><a href="#education"><span>02.</span>RECORDS</a></li>
+                <li><a href="#skills"><span>03.</span>ARSENAL</a></li>
+                <li><a href="#experience"><span>04.</span>FIELDWORK</a></li>
+                <li><a href="#projects"><span>05.</span>ARCHIVES</a></li>
+                <li><a href="#contact" class="nav-cta">SIGNAL</a></li>
             </ul>
         </div>
     </nav>
 
+    <!-- Hero Section -->
     <header class="hero" id="about">
-        <div class="hero-content hidden">
-            <p class="greeting"><i class="fas fa-terminal"></i> INITIALIZING SUBJECT DOSSIER // ID: DHRUV_23</p>
-            <h1 class="name" data-text="DHRUV.">DHRUV.</h1>
-            <h2 class="title">I ENGINEER <span id="typewriter"></span><span class="cursor">█</span></h2>
-            <p class="summary">
-                Final-year B.Tech CSE (AI & ML) operative & aspiring Cloud Trainee Engineer. Specializing in high-resilience backend architecture, intelligent AI-driven automation, and scalable web deployments. Operating out of Greater Noida—built for relentless problem-solving and mission-critical cloud initiatives.
-            </p>
-            <div class="cta-buttons">
-                <a href="#projects" class="btn primary"><i class="fas fa-folder-open"></i> Access Case Files</a>
-                <a href="#mini-games" class="btn secondary"><i class="fas fa-gamepad"></i> Simulations</a>
-                <a href="https://github.com/dhruvpathak23" target="_blank" class="btn secondary"><i class="fab fa-github"></i> GitHub Terminal</a>
+        <div class="hero-grid hidden">
+            
+            <!-- Left Column: Bio & Controls -->
+            <div class="hero-text">
+                <div class="hud-alert">
+                    <span class="blinking-dot"></span> BIOMETRIC MATCH CONFIRMED // OPERATIVE: DHRUV_23
+                </div>
+                <h1 class="glitch-name" data-text="DHRUV.">DHRUV.</h1>
+                <h2 class="title">I ENGINEER <span id="typewriter"></span><span class="cursor">_</span></h2>
+                
+                <p class="summary">
+                    Final-year <strong>B.Tech CSE (AI & ML)</strong> student & aspiring <strong>Cloud Trainee Engineer</strong>. Specializing in high-resilience backend systems, intelligent AI-driven automation, and scalable web applications. Built for relentless problem-solving and real-world cloud initiatives.
+                </p>
+
+                <!-- Tactical Telemetry Bar -->
+                <div class="telemetry-bar">
+                    <div class="stat-box">
+                        <span class="stat-num">4+</span>
+                        <span class="stat-label">AI / CLOUD DEPLOYMENTS</span>
+                    </div>
+                    <div class="stat-box">
+                        <span class="stat-num">4</span>
+                        <span class="stat-label">VERIFIED INTERNSHIPS</span>
+                    </div>
+                    <div class="stat-box">
+                        <span class="stat-num">7.4</span>
+                        <span class="stat-label">CURRENT CGPA</span>
+                    </div>
+                </div>
+
+                <div class="cta-buttons">
+                    <a href="#projects" class="btn primary"><i class="fas fa-crosshairs"></i> Access Case Files</a>
+                    <a href="#mini-games" class="btn secondary"><i class="fas fa-gamepad"></i> Combat Sims</a>
+                    <a href="https://github.com/dhruvpathak23" target="_blank" class="btn secondary"><i class="fab fa-github"></i> GitHub</a>
+                </div>
             </div>
+
+            <!-- Right Column: Interactive Batcomputer Radar Graphic -->
+            <div class="hero-visual">
+                <div class="radar-container">
+                    <div class="radar-ring ring-1"></div>
+                    <div class="radar-ring ring-2"></div>
+                    <div class="radar-ring ring-3"></div>
+                    <div class="radar-sweep"></div>
+                    <!-- Sharp 2022 Tactical Bat Silhouette -->
+                    <svg class="hero-bat-svg" viewBox="0 0 200 100">
+                        <path d="M100 32 L90 12 L83 28 C62 26 35 12 0 2 C22 30 30 55 12 84 C42 70 65 75 85 95 L100 76 L115 95 C135 75 158 70 188 84 C170 55 178 30 200 2 C165 12 138 26 117 28 L110 12 Z" />
+                    </svg>
+                    <div class="hud-coords">LAT: 28.4744° N // LON: 77.5040° E</div>
+                </div>
+            </div>
+
         </div>
     </header>
 
+    <!-- Education Section -->
     <section class="education-section" id="education">
         <div class="section-container hidden">
-            <h2 class="section-title"><span class="code-num">02 //</span> ACADEMIC RECORDS</h2>
+            <div class="section-header">
+                <span class="section-tag">// DATABASE_QUERY: ACADEMIC_HISTORY</span>
+                <h2 class="section-title"><span class="code-num">02.</span> ACADEMIC RECORDS</h2>
+            </div>
+
             <div class="timeline">
-                <div class="timeline-item">
+                <div class="timeline-item tilt-card">
                     <div class="timeline-dot"></div>
                     <div class="timeline-content">
-                        <h3>B.Tech/CSE (AI & ML)</h3>
-                        <h4>Galgotias University, Greater Noida</h4>
-                        <p class="date">2022 - 2026 // STATUS: ACTIVE</p>
-                        <p>CGPA: 7.4</p>
+                        <div class="timeline-top">
+                            <h3>B.Tech/CSE (AI & ML)</h3>
+                            <span class="date-badge">2022 - 2026</span>
+                        </div>
+                        <h4><i class="fas fa-university"></i> Galgotias University, Greater Noida</h4>
+                        <p class="score-readout">STATUS: FINAL YEAR OPERATIVE // <strong>CGPA: 7.4</strong></p>
                     </div>
                 </div>
-                <div class="timeline-item">
+
+                <div class="timeline-item tilt-card">
                     <div class="timeline-dot"></div>
                     <div class="timeline-content">
-                        <h3>Class XII (CBSE)</h3>
-                        <h4>D.A.V Public School, BSEB Colony, Patna</h4>
-                        <p class="date">2022 // CLEARED</p>
-                        <p>Score: 74.2%</p>
+                        <div class="timeline-top">
+                            <h3>Class XII (CBSE)</h3>
+                            <span class="date-badge">2022</span>
+                        </div>
+                        <h4><i class="fas fa-school"></i> D.A.V Public School, BSEB Colony, Patna</h4>
+                        <p class="score-readout">CLEARANCE LEVEL: SENIOR SECONDARY // <strong>SCORE: 74.2%</strong></p>
                     </div>
                 </div>
-                <div class="timeline-item">
+
+                <div class="timeline-item tilt-card">
                     <div class="timeline-dot"></div>
                     <div class="timeline-content">
-                        <h3>Class X (CBSE)</h3>
-                        <h4>D.A.V Public School, Walmi Complex, Patna</h4>
-                        <p class="date">2020 // CLEARED</p>
-                        <p>Score: 82.4%</p>
+                        <div class="timeline-top">
+                            <h3>Class X (CBSE)</h3>
+                            <span class="date-badge">2020</span>
+                        </div>
+                        <h4><i class="fas fa-school"></i> D.A.V Public School, Walmi Complex, Patna</h4>
+                        <p class="score-readout">CLEARANCE LEVEL: SECONDARY // <strong>SCORE: 82.4%</strong></p>
                     </div>
                 </div>
             </div>
         </div>
     </section>
 
+    <!-- Skills Section -->
     <section class="skills-section" id="skills">
         <div class="section-container hidden">
-            <h2 class="section-title"><span class="code-num">03 //</span> TACTICAL ARSENAL</h2>
+            <div class="section-header">
+                <span class="section-tag">// LOADOUT_SPECIFICATIONS</span>
+                <h2 class="section-title"><span class="code-num">03.</span> TECHNICAL ARSENAL</h2>
+            </div>
+
             <div class="skills-grid">
-                <div class="skill-category">
-                    <h3><i class="fas fa-code"></i> Programming & Dev</h3>
+                <div class="skill-category tilt-card">
+                    <div class="card-corner"></div>
+                    <h3><i class="fas fa-terminal"></i> Programming & Dev</h3>
                     <div class="tags">
                         <span>Python</span><span>Java</span><span>JavaScript</span><span>REST APIs</span><span>DSA</span><span>Backend Logic</span>
                     </div>
                 </div>
-                <div class="skill-category">
-                    <h3><i class="fas fa-brain"></i> AI, Data & Analytics</h3>
+
+                <div class="skill-category tilt-card">
+                    <div class="card-corner"></div>
+                    <h3><i class="fas fa-microchip"></i> AI, Data & Analytics</h3>
                     <div class="tags">
                         <span>Machine Learning</span><span>NLP (TF-IDF, BERT)</span><span>Pandas</span><span>NumPy</span><span>Matplotlib</span><span>Model Evaluation</span>
                     </div>
                 </div>
-                <div class="skill-category">
-                    <h3><i class="fas fa-server"></i> Web & Tools</h3>
+
+                <div class="skill-category tilt-card">
+                    <div class="card-corner"></div>
+                    <h3><i class="fas fa-network-wired"></i> Web & Tools</h3>
                     <div class="tags">
                         <span>ReactJS</span><span>Django</span><span>Flask</span><span>MySQL</span><span>Git/GitHub</span><span>Jupyter</span>
                     </div>
                 </div>
-                <div class="skill-category">
-                    <h3><i class="fas fa-shield-alt"></i> Field Protocols</h3>
+
+                <div class="skill-category tilt-card">
+                    <div class="card-corner"></div>
+                    <h3><i class="fas fa-shield-halved"></i> Tactical Soft Skills</h3>
                     <div class="tags">
                         <span>Analytical Thinking</span><span>Problem Solving</span><span>Team Collaboration</span><span>Communication</span>
                     </div>
@@ -117,193 +196,23 @@
         </div>
     </section>
 
+    <!-- Experience Section -->
     <section class="experience-section" id="experience">
         <div class="section-container hidden">
-            <h2 class="section-title"><span class="code-num">04 //</span> FIELD OPERATIONS & TRAINING</h2>
+            <div class="section-header">
+                <span class="section-tag">// VERIFIED_FIELD_CREDITS</span>
+                <h2 class="section-title"><span class="code-num">04.</span> INTERNSHIPS & TRAINING</h2>
+            </div>
+
             <div class="project-grid">
-                
-                <div class="project-card experience-card">
+                <div class="project-card experience-card tilt-card">
                     <div class="project-content">
-                        <span class="file-stamp">VERIFIED // LOG_01</span>
+                        <div class="card-meta">
+                            <span class="case-id">LOG // 01</span>
+                            <span class="status-pill">VERIFIED</span>
+                        </div>
                         <h3>AI & ML Virtual Intern</h3>
                         <p class="company"><i class="fab fa-google"></i> AICTE - Google</p>
                         <p>Worked on industry-aligned AI workflows using Python. Built and evaluated ML models for Fake News Detection and Stock Prediction. Gained experience in data preprocessing and model validation.</p>
                         <div class="card-actions">
-                            <a href="https://drive.google.com/file/d/14U4GmKXX1yBa4cNvtMK2mGdW3Mq_vW3s/view?usp=drive_link" target="_blank" class="btn secondary small"><i class="fas fa-file-contract"></i> Inspect Credential</a>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="project-card experience-card">
-                    <div class="project-content">
-                        <span class="file-stamp">VERIFIED // LOG_02</span>
-                        <h3>AI & ML Virtual Intern</h3>
-                        <p class="company"><i class="fas fa-laptop-code"></i> CodexIntern</p>
-                        <p>Developed regression and classification models using Scikit-learn. Analyzed datasets using Pandas and NumPy, and explored deep learning fundamentals.</p>
-                        <div class="card-actions">
-                            <a href="https://drive.google.com/file/d/1u2Yq7JFbV_kihxQC2ihyqm6ZQxgtkkQQ/view?usp=drive_link" target="_blank" class="btn secondary small"><i class="fas fa-file-contract"></i> Inspect Credential</a>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="project-card experience-card">
-                    <div class="project-content">
-                        <span class="file-stamp">VERIFIED // LOG_03</span>
-                        <h3>Java Fundamentals Trainee</h3>
-                        <p class="company"><i class="fab fa-java"></i> Oracle Academy</p>
-                        <p>Completed Oracle-certified Java program. Built strong proficiency in OOP, classes, methods, control structures, and coding best practices.</p>
-                        <div class="card-actions">
-                            <a href="https://drive.google.com/file/d/18UwzHDTYMH54wwNLT6P0WxSAOrAWorhl/view?usp=drive_link" target="_blank" class="btn secondary small"><i class="fas fa-file-contract"></i> Inspect Credential</a>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="project-card experience-card">
-                    <div class="project-content">
-                        <span class="file-stamp">VERIFIED // LOG_04</span>
-                        <h3>AI & ML Trainee</h3>
-                        <p class="company"><i class="fas fa-chalkboard-teacher"></i> Internshala Trainings</p>
-                        <p>Completed intensive training in AI & ML algorithms, Python frameworks, and deployment concepts.</p>
-                        <div class="card-actions">
-                            <a href="https://drive.google.com/file/d/1VDKtFTcq6wjlKRNcTyF5pj3X3J8fecx3/view?usp=drive_link" target="_blank" class="btn secondary small"><i class="fas fa-file-contract"></i> Inspect Credential</a>
-                        </div>
-                    </div>
-                </div>
-
-            </div>
-        </div>
-    </section>
-
-    <section class="projects-section" id="projects">
-        <div class="section-container hidden">
-            <h2 class="section-title"><span class="code-num">05 //</span> CLASSIFIED CASE FILES</h2>
-            <div class="project-grid">
-                
-                <div class="project-card">
-                    <div class="project-content">
-                        <div class="card-header-row">
-                            <div class="project-icon"><i class="fas fa-globe-americas"></i></div>
-                            <span class="file-stamp">CASE #001</span>
-                        </div>
-                        <h3>TourBaba - Travel Assistant</h3>
-                        <p>A React-based web application delivering real-time weather, AQI, and travel insights. Integrated third-party APIs and built responsive UI using hooks following component-based architecture.</p>
-                        <div class="tech-stack"><span>React</span><span>APIs</span><span>UI Design</span></div>
-                        <div class="card-actions">
-                            <a href="https://tourbaba.lovable.app" target="_blank" class="btn primary small"><i class="fas fa-crosshairs"></i> Live Deployment</a>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="project-card">
-                    <div class="project-content">
-                        <div class="card-header-row">
-                            <div class="project-icon"><i class="fas fa-robot"></i></div>
-                            <span class="file-stamp">CASE #002</span>
-                        </div>
-                        <h3>Fake News Detection Chatbot</h3>
-                        <p>An AI-powered chatbot using Flask and NLP models (TF-IDF, Logistic Regression) to classify news articles in real-time with a RESTful API architecture deployed on cloud.</p>
-                        <div class="tech-stack"><span>Python</span><span>Flask</span><span>NLP</span></div>
-                        <div class="card-actions">
-                            <a href="https://dhruvpathak23-ai-fake-news-detection-chatbot-app-ocewyw.streamlit.app/" target="_blank" class="btn primary small"><i class="fas fa-crosshairs"></i> Live Deployment</a>
-                            <a href="https://github.com/dhruvpathak23/AI-FAKE-NEWS-DETECTION-CHATBOT" target="_blank" class="btn secondary small"><i class="fab fa-github"></i> Source</a>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="project-card">
-                    <div class="project-content">
-                        <div class="card-header-row">
-                            <div class="project-icon"><i class="fas fa-chart-line"></i></div>
-                            <span class="file-stamp">CASE #003</span>
-                        </div>
-                        <h3>Automated Crypto Trading Bot</h3>
-                        <p>Automated Binance Futures trading bot using Python. Implemented secure HMAC SHA256 signatures and built an interactive Streamlit dashboard for managing credentials.</p>
-                        <div class="tech-stack"><span>Python</span><span>Binance API</span><span>Streamlit</span></div>
-                        <div class="card-actions">
-                            <a href="https://dhruvpathak23-binance-futures-testnet-trading--dashboard-cbusdv.streamlit.app/" target="_blank" class="btn primary small"><i class="fas fa-crosshairs"></i> Live Deployment</a>
-                            <a href="https://github.com/dhruvpathak23/Binance-Futures-Testnet-Trading-Bot" target="_blank" class="btn secondary small"><i class="fab fa-github"></i> Source</a>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="project-card">
-                    <div class="project-content">
-                        <div class="card-header-row">
-                            <div class="project-icon"><i class="fas fa-microphone-alt"></i></div>
-                            <span class="file-stamp">CASE #004</span>
-                        </div>
-                        <h3>AI Call Sentiment Analyzer</h3>
-                        <p>Engineered an end-to-end pipeline converting raw audio to text using Speech-to-Text models. Implemented NLP to identify customer sentiment and emotional triggers.</p>
-                        <div class="tech-stack"><span>Whisper API</span><span>FastAPI</span><span>React</span></div>
-                        <div class="card-actions">
-                            <a href="https://dhruvpathak23-call-sentiment-analyzer-appapp-u7b9e3.streamlit.app/" target="_blank" class="btn primary small"><i class="fas fa-crosshairs"></i> Live Deployment</a>
-                            <a href="https://github.com/dhruvpathak23/call_sentiment_analyzer" target="_blank" class="btn secondary small"><i class="fab fa-github"></i> Source</a>
-                        </div>
-                    </div>
-                </div>
-
-            </div>
-        </div>
-    </section>
-
-    <section class="projects-section" id="mini-games" style="padding-top: 0;">
-        <div class="section-container hidden" style="padding-top: 20px;">
-            <h2 class="section-title" style="font-size: 1.5rem; color: var(--text-muted);"><span class="code-num">05.1 //</span> TACTICAL SIMULATIONS & UI</h2>
-            <div class="project-grid">
-                
-                <div class="project-card">
-                    <div class="project-content">
-                        <div class="card-header-row">
-                            <div class="project-icon"><i class="fas fa-gamepad"></i></div>
-                            <span class="file-stamp">SIM #01</span>
-                        </div>
-                        <h3>Tic-Tac-Toe</h3>
-                        <p>A classic, interactive Tic-Tac-Toe web game featuring a clean UI, dynamic DOM manipulation, and responsive gameplay logic.</p>
-                        <div class="tech-stack"><span>HTML</span><span>CSS</span><span>JavaScript</span></div>
-                        <div class="card-actions">
-                            <a href="https://dhruvpathak23.github.io/TIC-TAC-TOE-GAME/" target="_blank" class="btn primary small"><i class="fas fa-play"></i> Run Sim</a>
-                            <a href="https://github.com/dhruvpathak23/TIC-TAC-TOE-GAME" target="_blank" class="btn secondary small"><i class="fab fa-github"></i> Source</a>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="project-card">
-                    <div class="project-content">
-                        <div class="card-header-row">
-                            <div class="project-icon"><i class="fas fa-hand-rock"></i></div>
-                            <span class="file-stamp">SIM #02</span>
-                        </div>
-                        <h3>Rock-Paper-Scissors</h3>
-                        <p>A fun, quick-play Rock-Paper-Scissors game against a computerized opponent. Includes score tracking and interactive state management.</p>
-                        <div class="tech-stack"><span>HTML</span><span>CSS</span><span>JavaScript</span></div>
-                        <div class="card-actions">
-                            <a href="https://dhruvpathak23.github.io/ROCK-PAPER-SCISSOR-GAME/" target="_blank" class="btn primary small"><i class="fas fa-play"></i> Run Sim</a>
-                            <a href="https://github.com/dhruvpathak23/ROCK-PAPER-SCISSOR-GAME" target="_blank" class="btn secondary small"><i class="fab fa-github"></i> Source</a>
-                        </div>
-                    </div>
-                </div>
-
-            </div>
-        </div>
-    </section>
-
-    <section class="contact-section" id="contact">
-        <div class="section-container hidden center-text">
-            <h2 class="section-title"><span class="code-num">06 //</span> ACTIVATE THE SIGNAL</h2>
-            <p class="contact-sub">Ready for deployment in software engineering, AI systems, and cloud infrastructure. Transmit a signal below.</p>
-            <div class="social-links">
-                <a href="mailto:dhruvkaushik31@gmail.com" class="social-icon" title="Email"><i class="fas fa-envelope"></i></a>
-                <a href="https://www.linkedin.com/in/dhruv-pathak-45b289266" target="_blank" class="social-icon" title="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
-                <a href="https://leetcode.com/u/dhruvhacks/" target="_blank" class="social-icon" title="LeetCode"><i class="fas fa-code"></i></a>
-            </div>
-            <a href="mailto:dhruvkaushik31@gmail.com" class="btn primary mt-4"><i class="fas fa-satellite-dish"></i> Transmit Signal</a>
-        </div>
-    </section>
-
-    <footer>
-        <p>BATCOMPUTER OS v2026.11 // ENGINEERED IN THE SHADOWS BY DHRUV</p>
-    </footer>
-
-    <script src="main.js"></script>
-</body>
-</html>
+                            <a href="https://drive.google.com/file/d/14U4GmKXX1yBa4cNvtMK2mGdW3Mq_vW3s/view?usp=drive_link" target="_
